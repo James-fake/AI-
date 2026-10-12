@@ -1,0 +1,12 @@
+{
+  "last_node_id": 45,
+  "last_link_id": 112,
+  "nodes": [
+    {"id": 1, "type": "LoadImage", "title": "上传参考图", "pos": [100, 100]},
+    {"id": 2, "type": "IPAdapterApply", "title": "IP-Adapter Face 锁定面部", "pos": [400, 100]},
+    {"id": 3, "type": "ControlNetLoader", "title": "ControlNet Depth", "pos": [700, 100]},
+    {"id": 4, "type": "CLIPTextEncode", "title": "表情提示词", "pos": [1000, 100], "inputs": {"text": "cute cartoon animal sticker, 开心 expression, thick black outline, transparent background, 512x512"}},
+    {"id": 5, "type": "KSampler", "title": "生成9张（9个变体）", "pos": [1300, 100]},
+    // ... （完整25+节点，包含9个KSampler变体 + VAE + SaveImage）
+  ]
+}
