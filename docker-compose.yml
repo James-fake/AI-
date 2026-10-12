@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports: ["8000:8000"]
+    volumes:
+      - ./uploads:/app/uploads
+      - ./outputs:/app/outputs
+      - ./exports:/app/exports
+    env_file: .env
+    depends_on: [comfyui]
+
+  comfyui:
+    build: ./comfyui
+    ports: ["8188:8188"]
+    volumes:
+      - ./comfyui:/app
+      - ./models:/root/.cache/ComfyUI/models
+      - ./workflows:/app/workflow
+    restart: unless-stopped
